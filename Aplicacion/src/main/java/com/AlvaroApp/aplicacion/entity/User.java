@@ -51,11 +51,7 @@ public class User implements Serializable{
 	          inverseJoinColumns = @JoinColumn(name = "role_id"))
 	private Set<Role> roles;
 
-	public User(Long id) {
-		super();
-		this.id = id;
-	}
-
+	
 	public Long getId() {
 		return id;
 	}
@@ -118,6 +114,13 @@ public class User implements Serializable{
 
 	public void setRoles(Set<Role> roles) {
 		this.roles = roles;
+	}
+
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email
+				+ ", username=" + username + ", password=" + password + ", confirmPassword=" + confirmPassword
+				+ ", roles=" + roles + "]";
 	}
 
 	@Override
@@ -187,11 +190,4 @@ public class User implements Serializable{
 		return true;
 	}
 
-	@Override
-	public String toString() {
-		return "User [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email
-				+ ", username=" + username + ", password=" + password + ", confirmPassword=" + confirmPassword
-				+ ", roles=" + roles + "]";
-	}
-	
 }
